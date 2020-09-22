@@ -9,4 +9,9 @@ def clearsrt(argsrt):
 subj = {}
 with open('text_6.txt', 'r') as fileObj:
     for el in fileObj:
-        print(clearsrt(el))
+        list_line = clearsrt(el).split()
+        key_dic = list_line.pop(0)
+        sum_list = list(map(int, list_line))
+        subj[key_dic] = sum(sum_list)
+
+print(f"Общее количество часов по предметам \n {subj}")
