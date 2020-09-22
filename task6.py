@@ -7,7 +7,7 @@ def clearsrt(argsrt):
 
 
 subj = {}
-with open('text_6.txt', 'r') as fileObj:
+with open('text_6.txt', 'r', encoding='utf-8') as fileObj:
     for el in fileObj:
         list_line = clearsrt(el).split()
         key_dic = list_line.pop(0)

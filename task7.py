@@ -6,7 +6,7 @@ prof = 0
 prof_aver = 0
 average_profit = 0
 i = 0
-with open('text_7.txt', 'r') as file:
+with open('text_7.txt', 'r', encoding='utf-8') as file:
     for line in file:
         profVal, firm, earning, damage = line.split()
         profit[profVal] = int(earning) - int(damage)
@@ -19,12 +19,14 @@ with open('text_7.txt', 'r') as file:
     else:
         print(f'Прибыль средняя - отсутсвует. Все работают в убыток')
 
-    profit['average_profit'] = round(average_profit)
+    pr['average_profit'] = round(average_profit)
     print(f'Прибыль каждой компании - {profit}')
 
-with open('file_7.json', 'w') as write_js:
-    json.dump(profit, write_js)
+with open('file_7.json', 'w', encoding='utf-8') as write_js:
+    profit_json = [profit, pr]
+    print(profit_json)
+    json.dump(profit_json, write_js)
 
-    js_str = json.dumps(profit, indent=4, sort_keys=True, ensure_ascii=False)
+    js_str = json.dumps(profit_json, indent=4, sort_keys=True, ensure_ascii=False)
     print(f'Создан файл с расширением json со следующим содержимым: \n '
           f' {js_str}')
