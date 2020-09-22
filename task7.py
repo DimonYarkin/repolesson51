@@ -24,7 +24,6 @@ with open('text_7.txt', 'r', encoding='utf-8') as file:
 
 with open('file_7.json', 'w', encoding='utf-8') as write_js:
     profit_json = [profit, pr]
-    print(profit_json)
     json.dump(profit_json, write_js)
 
     js_str = json.dumps(profit_json, indent=4, sort_keys=True, ensure_ascii=False)
